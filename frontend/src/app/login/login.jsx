@@ -158,6 +158,7 @@ const LoginPage = ({ onNavigate, onLogin }) => {
                   <button
                     type="button"
                     className="forgot-password-btn"
+                    onClick={() => onNavigate && onNavigate('forgot')}
                   >
                     Forgot password?
                   </button>

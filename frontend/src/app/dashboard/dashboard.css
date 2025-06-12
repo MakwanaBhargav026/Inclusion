@@ -1144,6 +1144,7 @@ body {
   font-weight: 700;
   color: var(--text-light);
   margin-bottom: 16px;
+  /* Removed overflow-y to prevent scroll */
 }
 
 .dark-mode .issues-section h3 {
@@ -1151,12 +1152,14 @@ body {
 }
 
 .issues-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-height: 400px;
-  overflow-y: auto;
-  padding-right: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: none; /* Ensure it's not restricted */
+  overflow: hidden;  /* Disable scrolling */
 }
 
 .issue-card {

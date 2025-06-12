@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import LoginPage from './app/login/login';
 import SignupPage from './app/sigup/signup';
 import DashboardPage from './app/dashboard/dashboard';
+import ForgotPasswordPage from './app/forgotpage/forgotpage';
+
 
 // Main App Component
 const App = () => {
@@ -64,6 +66,17 @@ const App = () => {
             <SignupPage onNavigate={navigate} onLogin={handleLogin} />
           )}
         </div>
+
+        {/* Forgot Password Page */}
+<div className={`absolute inset-0 transition-all duration-700 ease-in-out transform ${
+  currentPage === 'forgot'
+    ? 'translate-x-0 opacity-100 scale-100'
+    : 'translate-y-full opacity-0 scale-95'
+}`}>
+  {currentPage === 'forgot' && (
+    <ForgotPasswordPage onNavigate={navigate} />
+  )}
+</div>
 
         {/* Dashboard Page */}
         <div className={`absolute inset-0 transition-all duration-700 ease-in-out transform ${
