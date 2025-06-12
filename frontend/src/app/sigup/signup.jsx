@@ -71,17 +71,20 @@ const Signup = ({ onNavigate, onLogin }) => {
       return;
     }
 
+    URL=import.meta.env.VITE_API_BASE_URL;
+    const API_URL = URL;
+
     setSignupLoading(true);
       try {
-   const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/signup`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: signupData.name,
-        email: signupData.email,
-        password: signupData.password
-      })
-    });
+   const response = await fetch(`${URL}/signup`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    name: signupData.name,
+    email: signupData.email,
+    password: signupData.password
+  })
+});
 
     const data = await response.json();
 
@@ -161,14 +164,14 @@ const Signup = ({ onNavigate, onLogin }) => {
                     <div className="form-field">
                       <label className="field-label">
                         <User style={{ width: '1rem', height: '1rem' }} />
-                        Username
+                        Email
                       </label>
                       <div className="input-wrapper">
                         <input
                           name="username"
                           type="text"
-                          placeholder="Enter username (admin)"
-                          value={loginData.username}
+                          placeholder="Enter Email"
+                          value={loginData.email}
                           onChange={handleLoginChange}
                           onKeyPress={handleKeyPress}
                           className="form-input"
@@ -185,7 +188,7 @@ const Signup = ({ onNavigate, onLogin }) => {
                         <input
                           name="password"
                           type={showPassword ? "text" : "password"}
-                          placeholder="Enter password (admin)"
+                          placeholder="Enter password"
                           value={loginData.password}
                           onChange={handleLoginChange}
                           onKeyPress={handleKeyPress}
@@ -271,7 +274,7 @@ const Signup = ({ onNavigate, onLogin }) => {
                       <UserPlus size={32} color="white" />
                     </div>
                     <h1 className="welcome-title">Create Account</h1>
-                    <p className="welcome-subtitle">Join Accessibility Analyzer today</p>
+                    <p className="welcome-subtitle">Join Inclusion Analyzer today</p>
                   </div>
 
                   {!passwordMatch && (

@@ -21,12 +21,15 @@ const LoginPage = ({ onNavigate, onLogin }) => {
     if (error) setError('');
   };
 
+  const API_URL = import.meta.env.VITE_API_BASE_URL;
+  console.log("API_URL:", API_URL);
+
   const handleSubmit = async () => {
     setIsLoading(true);
     setError('');
 
    try {
-    const response = await fetch('http://localhost:5000/api/signin', {
+    const response = await fetch(`${API_URL}/signin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -37,7 +40,13 @@ const LoginPage = ({ onNavigate, onLogin }) => {
       }),
     });
 
-    const data = await response.json();
+    let data;
+try {
+  data = await response.json();
+} catch (e) {
+  throw new Error("Invalid JSON response");
+}
+
 
     if (response.ok) {
       onLogin(data.user); // Navigate to dashboard
@@ -107,7 +116,7 @@ const LoginPage = ({ onNavigate, onLogin }) => {
                       name="email"
                       type="text"
                       placeholder="Enter Email"
-                      value={formData.username}
+                      value={formData.email}
                       onChange={handleChange}
                       onKeyPress={handleKeyPress}
                       className="form-input"

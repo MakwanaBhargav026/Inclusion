@@ -1,7 +1,7 @@
 # Ignore Python env files
 backend/.env
 backend_analysis/.env
-frontend/src/.env
+frontend/.env
 
 # Node.js files
 frontend/node_modules/
