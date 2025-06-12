@@ -337,7 +337,7 @@ const Dashboard = ({ user, onLogout }) => {
                   </div>
                 ) : (
                   <div className="input-section">
-                    <label htmlFor="html">📝 HTML Code</label>
+                    <label htmlFor="html">📝 Code</label>
                     <textarea
                       id="html"
                       placeholder="Paste your HTML code here..."
