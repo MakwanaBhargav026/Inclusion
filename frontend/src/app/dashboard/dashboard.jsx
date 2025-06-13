@@ -321,21 +321,33 @@ const Dashboard = ({ user, onLogout }) => {
 
                 {/* Input Content */}
                 {activeTab === 'url' ? (
-                  <div className="input-section">
-                    <label htmlFor="url">🌐 Website URL</label>
-                    <div className="input-wrapper">
-                      <input
-                        id="url"
-                        type="url"
-                        placeholder="https://example.com"
-                        value={urlInput}
-                        onChange={(e) => setUrlInput(e.target.value)}
-                        className="url-input"
-                      />
-                      <Globe className="input-icon" size={20} />
-                    </div>
-                  </div>
-                ) : (
+                   <div className="input-section">
+                      <label htmlFor="url">🌐 Website URL</label>
+                        <div className="input-wrapper">
+                          <input
+                              id="url"
+                              type="url"
+                              placeholder="https://example.com"
+                              value={urlInput}
+                              onChange={(e) => setUrlInput(e.target.value)}
+                              className="url-input"
+                          />
+                          <Globe className="input-icon" size={20} />
+                         </div>
+
+                     {/* Display message if invalid */}
+    {urlInput.length > 0 &&
+      !urlInput.startsWith("http://") &&
+      !urlInput.startsWith("https://") && (
+        <p className="error-message">Please provide a proper URL starting with http:// or https://</p>
+      )}
+
+    {/* Submit button disabled if invalid*/}
+    <button disabled={!urlInput.startsWith("http://") && !urlInput.startsWith("https://")}>
+      Submit
+    </button>
+  </div>
+) : (
                   <div className="input-section">
                     <label htmlFor="html">📝 Code</label>
                     <textarea
