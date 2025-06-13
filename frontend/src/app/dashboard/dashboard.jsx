@@ -80,7 +80,7 @@ const Dashboard = ({ user, onLogout }) => {
 
       console.log("Sending payload to backend:", payload);
 
-      const res = await fetch("http://localhost:8000/analyze", {
+      const res = await fetch(import.meta.env.VITE_APP_ANALYZE_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
@@ -116,7 +116,7 @@ const Dashboard = ({ user, onLogout }) => {
 
   if (!responseData) {
     try {
-      const response = await fetch("http://127.0.0.1:8000/", {
+      const response = await fetch("", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url: urlInput }),
