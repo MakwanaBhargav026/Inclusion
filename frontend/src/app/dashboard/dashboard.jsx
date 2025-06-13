@@ -342,10 +342,7 @@ const Dashboard = ({ user, onLogout }) => {
         <p className="error-message">Please provide a proper URL starting with http:// or https://</p>
       )}
 
-    {/* Submit button disabled if invalid*/}
-    <button disabled={!urlInput.startsWith("http://") && !urlInput.startsWith("https://")}>
-      Submit
-    </button>
+    
   </div>
 ) : (
                   <div className="input-section">
