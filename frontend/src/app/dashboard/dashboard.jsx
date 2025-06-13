@@ -363,8 +363,8 @@ const Dashboard = ({ user, onLogout }) => {
 
                 <button
                   onClick={handleAnalyze}
-                  disabled={isAnalyzing || (!urlInput.trim() && !htmlInput.trim())}
                   className="analyze-btn"
+                  disabled={isAnalyzing || (!urlInput.trim() && !htmlInput.trim()) && (!urlInput.startsWith("http://")) && (!urlInput.startsWith("https://"))}
                 >
                   {isAnalyzing ? (
                     <>
