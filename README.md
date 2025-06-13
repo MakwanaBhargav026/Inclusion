@@ -1,6 +1,8 @@
 # 🔥 Inclusion Analyzer 🔥
 
-> An automated platform for analyzing the quality of your webpage with a powerful combination of React, Node.js, MongoDB Atlas, FastAPI, and Gemini.  
+> An automated platform for analyzing the quality of your webpage with a powerful combination of React, Node.js, MongoDB Atlas, FastAPI, and Gemini.
+> 
+> For better experience clink on link : [Inclusion](https://inclusion-frontend.onrender.com)
 
 ---
 
@@ -54,14 +56,17 @@ Webpage Analyzer assesses your website against **10 key components** to help you
 
 > Here are some snapshots of the application in action:
 
-![Dashboard](./images/dashboard.png)  
-*Comprehensive Report Dashboard*
+![Login](login.png)  
+*Login*
 
-![Analysis Report](./images/analysis.png)  
-*Analyze your webpage components*
+![Dassboard](dashboard1.png)
+![Dassboard](dash2.png) 
+*Dashboard*
 
-![Login/Register](./images/login.png)  
-*User Authentication (Login/Register)*  
+![Report](analysis.png)
+![Report](analysis1.png)
+*Report*
+ 
 
 ---
 
